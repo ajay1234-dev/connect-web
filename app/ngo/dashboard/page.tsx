@@ -1,14 +1,34 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { Users, CalendarCheck, Megaphone } from 'lucide-react';
 import Link from 'next/link';
-
-const stats = [
-  { name: 'My Active Events', value: '0', icon: CalendarCheck },
-  { name: 'Registered Volunteers', value: '0', icon: Users },
-];
+import { collection, query, where, getCountFromServer } from 'firebase/firestore';
+import { db, auth } from '@/lib/firebase';
 
 export default function NgoDashboard() {
+  const [eventCount, setEventCount] = useState(0);
+
+  useEffect(() => {
+    const unsub = auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        try {
+          const q = query(collection(db, 'events'), where('ngoId', '==', user.uid));
+          const snap = await getCountFromServer(q);
+          setEventCount(snap.data().count);
+        } catch(e) {
+          console.error(e);
+        }
+      }
+    });
+    return () => unsub();
+  }, []);
+
+  const stats = [
+    { name: 'My Active Events', value: eventCount, icon: CalendarCheck },
+    { name: 'Registered Volunteers', value: '0', icon: Users },
+  ];
+
   return (
     <div>
       <div className="flex items-center justify-between mb-8">

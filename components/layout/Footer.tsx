@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-12 text-center">
       <div className="container mx-auto px-4">
         <div className="flex justify-center mb-6">
-          <span className="text-2xl font-bold text-indigo-600">CONNECT.</span>
+          <span className="text-2xl font-bold text-indigo-600">connect.</span>
         </div>
         <div className="flex justify-center gap-6 mb-8 text-sm font-medium text-slate-600 dark:text-slate-400">
           <Link href="/about" className="hover:text-indigo-600 transition-colors">About</Link>

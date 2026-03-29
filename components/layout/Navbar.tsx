@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { ThemeToggle } from '@/components/ui/ThemeToggle';
 
 export default function Navbar() {
   return (
@@ -13,7 +14,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Link href="/" className="text-xl font-bold tracking-tight text-indigo-600 dark:text-indigo-400">
-            CONNECT.
+            connect.
           </Link>
         </div>
         
@@ -24,6 +25,7 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-4">
+          <ThemeToggle />
           <Link href="/login" className="text-sm font-medium hover:text-indigo-600 transition-colors">
             Sign In
           </Link>
