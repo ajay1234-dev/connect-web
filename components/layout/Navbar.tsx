@@ -19,14 +19,14 @@ export default function Navbar() {
         </div>
         
         <div className="hidden md:flex gap-6 text-sm font-medium">
-          <Link href="#features" className="hover:text-indigo-600 transition-colors">Features</Link>
-          <Link href="#how-it-works" className="hover:text-indigo-600 transition-colors">How It Works</Link>
-          <Link href="#impact" className="hover:text-indigo-600 transition-colors">Impact</Link>
+          <Link href="#features" className="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Features</Link>
+          <Link href="#how-it-works" className="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">How It Works</Link>
+          <Link href="#impact" className="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Impact</Link>
         </div>
 
         <div className="flex items-center gap-4">
           <ThemeToggle />
-          <Link href="/login" className="text-sm font-medium hover:text-indigo-600 transition-colors">
+          <Link href="/login" className="text-sm font-medium text-slate-800 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
             Sign In
           </Link>
           <Link href="/register" className="text-sm font-medium bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition-colors">
